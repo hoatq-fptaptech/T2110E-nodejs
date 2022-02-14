@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("head.ejs") %>
+</head>
+<body>
+<header class="header col-xs-12">
+    <div class="container">
+        <div class="box-1 col-xs-12"></div>
+    </div>
+</header>
+<nav class="nav col-xs-12">
+    <div class="container">
+        <div class="box-2 col-xs-12"></div>
+    </div>
+</nav>
+<section class="main col-xs-12">
+    <div class="container">
+        <div class="col-md-9">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Mark</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nam</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Nam</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Nam</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Nam</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Nam</td>
+                    <td>9</td>
+                </tr>
+                </tbody>
+            </table>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Email.."/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="pwd" class="form-control" placeholder="Password.."/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button class="btn btn-warning" type="submit">Submit</button>
+                    <button class="btn btn-danger" type="submit">Submit</button>
+                    <button class="btn btn-info" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="box-1 col-md-3"></div>
+    </div>
+</section>
+<footer class="footer col-xs-12">
+    <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">Home</div>
+                <div role="tabpanel" class="tab-pane" id="profile">profile</div>
+                <div role="tabpanel" class="tab-pane" id="messages">messages</div>
+                <div role="tabpanel" class="tab-pane" id="settings">settings</div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
