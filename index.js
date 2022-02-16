@@ -59,7 +59,21 @@ app.get("/tin-tuc",function (req,res) {
         if(err) res.send("Errors..");
         else  res.render("demo",{
             products:rs.recordset
-        });;
+        });
+    })
+})
+app.get("/chi-tiet",function (req,res){
+    var param = req.query.id;
+    var sql_txt = "select * from SanPham where ID = "+param+";";
+    sql.query(sql_txt,function (err, rs) {
+        if(err) res.send("Errors..");
+        else if(rs.recordset.length ==0){
+            res.send("Không tìm thấy sản phẩm nào hết");
+        }else{
+            res.render("chitiet",{
+                product:rs.recordset[0]
+            })
+        }
     })
 })
 // routing ds - tim kieems hãng

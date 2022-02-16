@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("head.ejs") %>
+</head>
+<body>
+<header class="header col-xs-12">
+    <div class="container">
+        <div class="box-1 col-xs-12"></div>
+    </div>
+</header>
+<nav class="nav col-xs-12">
+    <div class="container">
+        <div class="box-2 col-xs-12"></div>
+    </div>
+</nav>
+<section class="main col-xs-12">
+    <div class="container">
+        <h1><%= product.TenSP %></h1>
+        <h2>Giá tiền: <%= product.Gia %></h2>
+        <h2>Số lượng: <%= product.SoLuong %> <%= product.DonVi %></h2>
+        <p>Mô tả sản phẩm: <%= product.MoTa %></p>
+    </div>
+</section>
+<footer class="footer col-xs-12">
+    <div class="container">
+
+    </div>
+</footer>
+</body>
+</html>

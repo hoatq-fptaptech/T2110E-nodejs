@@ -17,14 +17,15 @@
     <%
         // o day viet code js
         for(var i=0;i<products.length;i++){ %>
-            <li><%= products[i].TenSP %>
+            <li><a href="/chi-tiet?id=<%= products[i].ID %>">
+                    <%= products[i].TenSP %>
                 -- Giá tiền:
                 <% if(products[i].Gia<=20){ %>
                     <i><%= products[i].Gia %></i>
                 <% }else{ %>
                     <b><%= products[i].Gia %></b>
                 <% }%>
-            </li>
+                </a></li>
     <%    }  %>
 </ul>
 </div>
