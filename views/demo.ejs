@@ -4,11 +4,29 @@
     <%- include("head.ejs") %>
 </head>
 <body>
+<div class="container">
   <h1>Xin chao các bạn</h1>
-<ul>
-  <li>Cơm gà</li>
-  <li>Bánh mỳ xá xíu</li>
+  <div class="col-md-3">
+      <form action="/tin-tuc" method="get">
+          <input class="form-control" type="text" name="TenSP" />
+          <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+  </div>
+
+<ul class="col-md-6">
+    <%
+        // o day viet code js
+        for(var i=0;i<products.length;i++){ %>
+            <li><%= products[i].TenSP %>
+                -- Giá tiền:
+                <% if(products[i].Gia<=20){ %>
+                    <i><%= products[i].Gia %></i>
+                <% }else{ %>
+                    <b><%= products[i].Gia %></b>
+                <% }%>
+            </li>
+    <%    }  %>
 </ul>
-    <h1>Hiện đang có <%= xyz %> người truy cập</h1>
+</div>
 </body>
 </html>

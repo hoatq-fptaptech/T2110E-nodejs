@@ -9,6 +9,39 @@ app.use(express.static("public"));// cho quyền truy cập toàn bộ các file
 
 // khai bao su dung view engine la ejs
 app.set("view engine","ejs");
+// ket noi database
+var mssql = require("mssql");
+var config = {
+    server: "t2110e.database.windows.net",
+    user:"demosql",
+    password:"Abcd@123",
+    database:"t2110e-demosql",
+    stream: false,
+    port:1433,
+    options: {
+        trustedConnection: true,
+        encrypt: true,
+        enableArithAbort: true,
+        trustServerCertificate: true,
+    },
+}
+mssql.connect(config,function (err){
+    if(err) console.log(err);
+    else console.log("connected database..");
+});
+// tao doi tuong truy van
+var sql = new mssql.Request();
+
+// vi du 1 routing truy van db
+app.get("/san-pham",function (req, res) {
+    var sql_txt = "select * from SanPham;";
+    sql.query(sql_txt,function (err, rs) {
+        if(err) res.send("Errors..");
+        else res.send(rs.recordset);
+    })
+})
+
+
 // them routing
 var count = 0;
 app.get("/",function (req, res) {
@@ -20,8 +53,15 @@ app.get("/bong-da",function (req,res) {
     res.render("layout");
 })
 app.get("/tin-tuc",function (req,res) {
-    count++;
-    res.render("demo",{
-        xyz: count
-    });
+    var param = req.query.TenSP;
+    var sql_txt = "select * from SanPham where TenSP like '%"+param+"%';";
+    sql.query(sql_txt,function (err, rs) {
+        if(err) res.send("Errors..");
+        else  res.render("demo",{
+            products:rs.recordset
+        });;
+    })
 })
+// routing ds - tim kieems hãng
+// routing tim kiems sản phẩm theo tên hãng
+// routing tất cả sản phẩm kèm tên hãng
