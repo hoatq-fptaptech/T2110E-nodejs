@@ -42,7 +42,7 @@ var sql = new mssql.Request();
 app.get("/",function (req, res) {
     var sql_txt = "select * from Demo;";
     sql.query(sql_txt,function (err, rs) {
-        if(err) res.send("Errors..");
+        if(err) res.send(err);
         else res.send(rs.recordset);
     })
 })
