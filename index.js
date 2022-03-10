@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-const port = 1402;
+const port = process.env.PORT || 1402;
 app.listen(port,function (err) {
     console.log("server is running...");
 })
@@ -11,20 +11,26 @@ app.use(express.static("public"));// cho quyền truy cập toàn bộ các file
 app.set("view engine","ejs");
 // ket noi database
 var mssql = require("mssql");
-var config = {
-    server: "t2110e.database.windows.net",
-    user:"demosql",
-    password:"Abcd@123",
-    database:"t2110e-demosql",
-    stream: false,
-    port:1433,
-    options: {
-        trustedConnection: true,
-        encrypt: true,
-        enableArithAbort: true,
-        trustServerCertificate: true,
-    },
-}
+// var config = {
+//     server: "t2110e.database.windows.net",
+//     user:"demosql",
+//     password:"Abcd@123",
+//     database:"t2110e-demosql",
+//     stream: false,
+//     port:1433,
+//     options: {
+//         trustedConnection: true,
+//         encrypt: true,
+//         enableArithAbort: true,
+//         trustServerCertificate: true,
+//     },
+// }
+const config = {
+    server:"118.70.125.210",
+    user:"sa",
+    password:"z@GH7ytQ",
+    database:"QuangHoa"
+};
 mssql.connect(config,function (err){
     if(err) console.log(err);
     else console.log("connected database..");
