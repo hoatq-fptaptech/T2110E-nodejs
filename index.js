@@ -39,8 +39,8 @@ mssql.connect(config,function (err){
 var sql = new mssql.Request();
 
 // vi du 1 routing truy van db
-app.get("/san-pham",function (req, res) {
-    var sql_txt = "select * from SanPham;";
+app.get("/",function (req, res) {
+    var sql_txt = "select * from Demo;";
     sql.query(sql_txt,function (err, rs) {
         if(err) res.send("Errors..");
         else res.send(rs.recordset);
@@ -50,10 +50,10 @@ app.get("/san-pham",function (req, res) {
 
 // them routing
 var count = 0;
-app.get("/",function (req, res) {
-    count++;
-    res.send("Xin chào:"+count);
-})
+// app.get("/",function (req, res) {
+//     count++;
+//     res.send("Xin chào:"+count);
+// })
 app.get("/bong-da",function (req,res) {
     count++;
     res.render("layout");
